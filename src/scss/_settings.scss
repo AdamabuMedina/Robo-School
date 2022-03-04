@@ -115,4 +115,12 @@ a {
 
 .section-offset {
   padding: 120px 0;
+
+  @include high-tablet {
+    padding: 80px 0;
+  }
+
+  @include mobile {
+    padding: 60px 0;
+  }
 }

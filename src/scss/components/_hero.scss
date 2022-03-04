@@ -1,14 +1,18 @@
 .hero {
-  padding-top: 250px;
+  padding-top: 160px;
   min-height: 800px;
   background-color: var(--dark-color);
 
   &__container {
-    @include flex;
+    @include flex-v-center;
   }
 
   &__content {
     max-width: 530px;
+
+    @include high-tablet {
+      max-width: none;
+    }
   }
 
   &__title {
@@ -20,6 +24,12 @@
     text-transform: uppercase;
     color: var(--light-color);
 
+    @include mobile {
+      font-size: 30px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
     &-text {
       display: block;
       max-width: 91%;
@@ -27,6 +37,38 @@
       font-size: 20px;
       line-height: 160%;
       text-transform: initial;
+
+      @include mobile {
+        max-width: 100%;
+        font-size: 16px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    }
+  }
+
+  &__image {
+    transform: translateX(167px);
+
+    @include high-tablet {
+      display: none;
+    }
+  }
+
+  @include high-tablet {
+    padding-bottom: 100px;
+    min-height: auto;
+  }
+
+  @include mobile {
+    padding-bottom: 40px;
+  }
+
+  &__link {
+    @include mobile {
+      min-width: 300px;
+      padding: 16px 40px;
+      text-align: center;
     }
   }
 }
